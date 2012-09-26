@@ -83,8 +83,9 @@
         It will not be rotated or scaled.
         
     -->
-    <div id="bored" class="step slide" data-x="-1000" data-y="-1500">
-        <q>git, the stupid content tracker</q>
+    <div id="cover" class="step slide" data-x="-1000" data-y="-1500">
+        <q>aht $ whatis git</q>
+        <p>the stupid content tracker ...</p>
     </div>
 
     <!--
@@ -103,11 +104,10 @@
         
     -->
     <div class="step slide" data-x="0" data-y="-1500">
-        <q>Don't you think that presentations given <strong>in modern browsers</strong> shouldn't <strong>copy the limits</strong> of 'classic' slide decks?</q>
-    </div>
-
-    <div class="step slide" data-x="1000" data-y="-1500">
-        <q>Would you like to <strong>impress your audience</strong> with <strong>stunning visualization</strong> of your talk?</q>
+        <q>git init</q>
+        <p>For the first 10 years of kernel maintenance, we literally used <b>tarballs and patches</b>, which is a much superior source control management system than CVS is.</p>
+        <p><em>There is no way to do CVS right.</em></p>
+        <p style="float: right">Linus Torvalds<p>
     </div>
 
     <!--
@@ -120,10 +120,9 @@
         down (4 times) to make it back to it's correct size.
         
     -->
-    <div id="title" class="step" data-x="0" data-y="0" data-scale="4">
-        <span class="try">then you should try</span>
-        <h1>impress.js<sup>*</sup></h1>
-        <span class="footnote"><sup>*</sup> no rhyme intended</span>
+    <div id="title" class="step" data-x="0" data-y="0" data-rotate="90" data-scale="2">
+        <q>"Should I hacked together a stupid content tracker during my weekend so I can stop using this CVS/SVN shit?!?"</q><br />
+        <span class="footnote">or so thought Linus, and over a few months ...</span>
     </div>
 
     <!--
@@ -134,29 +133,55 @@
         element should be rotated by 90 degrees clockwise.
         
     -->
-    <div id="its" class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="5">
-        <p>It's a <strong>presentation tool</strong> <br/>
-        inspired by the idea behind <a href="http://prezi.com">prezi.com</a> <br/>
-        and based on the <strong>power of CSS3 transforms and transitions</strong> in modern browsers.</p>
+    <div id="design" class="step" data-x="500" data-y="2000" data-rotate="0" data-scale="6">
+        <p>git was created, its design criteria:</p>
+        <ul>
+          <li>high performance</li>
+          <li>non-linear development</li>
+          <li>strong integrity</li>
+        </ul>
     </div>
 
-    <div id="big" class="step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
-        <p>visualize your <b>big</b> <span class="thoughts">thoughts</span></p>
+    <div id="perf" class="step slide" data-x="-1000" data-y="4000" data-scale="1">
+        <pre>haianh ---> (aht-mbp) ~/src/server_api_core
+$ <b>time git log > /dev/null</b>
+
+real	0m0.026s
+user	0m0.007s
+sys	0m0.015s
+
+haianh ---> (aht-mbp) ~/src/svn/server_api_core-3.25
+$ <b>time svn log > /dev/null</b>
+
+real	0m29.861s
+user	0m0.262s
+sys	0m0.061s
+</pre>
+    </div>
+    
+    <div id="design1" class="step" data-x="500" data-y="2000" data-rotate="0" data-scale="6">
+    </div>
+    
+    <div id="distributed" class="step slide" data-x="0" data-y="4000" data-scale="1">
+        <h1>all repository are created equal !!!</h1>
+        <img class="center" src="alleq.png" />
     </div>
 
-    <!--
-        
-        And now it gets really exiting! We move into third dimension!
-        
-        Along with `data-x` and `data-y`, you can define the position on third (Z) axis, with
-        `data-z`. In the example below we use `data-z="-3000"` meaning that element should be
-        positioned far away from us (by 3000px).
-        
-    -->
-    <div id="tiny" class="step" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
-        <p>and <b>tiny</b> ideas</p>
+    <div id="svn" class="step slide" data-x="0" data-y="4800" data-scale="1">
+        <h1>unless one is promoted to be the <b>origin</b> of all things<h1>
+        <img class="center" src="workflow-a.png" />
     </div>
 
+    <div id="integration" class="step slide" data-x="0" data-y="5600" data-scale="1">
+        <h1>some may read, some may write<h1>
+        <img class="center" src="workflow-b.png" />
+    </div>
+
+    <div id="dictator" class="step slide" data-x="0" data-y="6400" data-scale="1">
+        <h1>or perhaps only <b>Linus</b> may write<h1>
+        <img class="center" src="workflow-c.png" />
+    </div>
+    
     <!--
         
         This step here doesn't introduce anything new when it comes to data attributes, but you

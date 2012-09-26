@@ -230,6 +230,16 @@ a:focus {
     letter-spacing: -1px;
 }
 
+.slide#cover {
+    background: url(../klamr-backdrop.png) no-repeat left bottom;
+    background-size: 87.5%;
+
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+}
+
 .slide q {
     display: block;
     font-size: 50px;
@@ -241,6 +251,25 @@ a:focus {
 .slide q strong {
     white-space: nowrap;
 }
+
+.slide p {
+    margin: 20px 0;
+}
+
+.slide h1 {
+    font-size: 50px;
+    line-height: 72px;
+    margin: 20px 0;
+}
+
+.slide img.center {
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#impress ul { list-style-type: katakana; list-style-position: inside; margin: 10px 0 0 10px; }
 
 /*
     And now we start to style each step separately.
@@ -272,6 +301,16 @@ a:focus {
 
 #title h1 {
     font-size: 190px;
+    
+    -webkit-transform: translateZ(50px);
+    -moz-transform:    translateZ(50px);
+    -ms-transform:     translateZ(50px);
+    -o-transform:      translateZ(50px);
+    transform:         translateZ(50px);
+}
+
+#title h3 {
+    font-size: 80px;
     
     -webkit-transform: translateZ(50px);
     -moz-transform:    translateZ(50px);
