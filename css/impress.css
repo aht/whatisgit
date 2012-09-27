@@ -230,6 +230,11 @@ a:focus {
     letter-spacing: -1px;
 }
 
+.slide.vertical {
+    width: 700px;
+    height: 900px;
+}
+
 .slide#cover {
     background: url(../klamr-backdrop.png) no-repeat left bottom;
     background-size: 87.5%;
@@ -264,12 +269,29 @@ a:focus {
 
 .slide img.center {
     display: block;
-    width: 80%;
+    max-width: 80%;
+    max-height: 600px;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
+    padding: 20px;
+}
+
+.slide.vertical img.center {
+    max-height: 1000px;
+}
+
+.slide p.caption {
+    text-align: center;
+    font-size: 32px;
+}
+
+img.fit {
+    max-height: 100%;
 }
 
 #impress ul { list-style-type: katakana; list-style-position: inside; margin: 10px 0 0 10px; }
+#impress ul li { margin-bottom: 5px; }
 
 /*
     And now we start to style each step separately.

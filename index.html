@@ -18,24 +18,6 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 </head>
 
-<!--
-    
-    Body element is used by impress.js to set some useful class names, that will allow you to detect
-    the support and state of the presentation in CSS or other scripts.
-    
-    First very useful class name is `impress-not-supported`. This class means, that browser doesn't
-    support features required by impress.js, so you should apply some fallback styles in your CSS.
-    It's not necessary to add it manually on this element. If the script detects that browser is not
-    good enough it will add this class, but keeping it in HTML means that users without JavaScript
-    will also get fallback styles.
-    
-    When impress.js script detects that browser supports all required features, this class name will
-    be removed.
-    
-    The class name on body element also depends on currently active presentation step. More details about
-    it can be found later, when `hint` element is being described.
-    
--->
 <body class="impress-not-supported">
 
 <div class="fallback-message">
@@ -110,30 +92,12 @@
         <p style="float: right">Linus Torvalds<p>
     </div>
 
-    <!--
-        
-        This is an example of step element being scaled.
-        
-        Again, we use a `data-` attribute, this time it's `data-scale="4"`, so it means that this
-        element will be 4 times larger than the others.
-        From presentation and transitions point of view it means, that it will have to be scaled
-        down (4 times) to make it back to it's correct size.
-        
-    -->
-    <div id="title" class="step" data-x="0" data-y="0" data-rotate="90" data-scale="2">
+    <div id="stupid" class="step" data-x="0" data-y="0" data-rotate="90" data-scale="2">
         <q>"Should I hacked together a stupid content tracker during my weekend so I can stop using this CVS/SVN shit?!?"</q><br />
         <span class="footnote">or so thought Linus, and over a few months ...</span>
     </div>
 
-    <!--
-        
-        This element introduces rotation.
-        
-        Notation shouldn't be a surprise. We use `data-rotate="90"` attribute, meaning that this
-        element should be rotated by 90 degrees clockwise.
-        
-    -->
-    <div id="design" class="step" data-x="500" data-y="2000" data-rotate="0" data-scale="6">
+    <div id="design" class="step" data-x="3000" data-y="0" data-rotate="0" data-scale="6">
         <p>git was created, its design criteria:</p>
         <ul>
           <li>high performance</li>
@@ -142,47 +106,74 @@
         </ul>
     </div>
 
-    <div id="perf" class="step slide" data-x="-1000" data-y="4000" data-scale="1">
-        <h1>with a warm cache</h1>
-        <pre>haianh ---> (aht-mbp) ~/src/server_api_core
-$ <b>time git log > /dev/null</b>
-
-real	0m0.026s
-user	0m0.007s
-sys	0m0.015s
-
-haianh ---> (aht-mbp) ~/src/svn/server_api_core-3.25
-$ <b>time svn log > /dev/null</b>
-
-real	0m29.861s
-user	0m0.262s
-sys	0m0.061s
-</pre>
-    </div>
+    <div id="perf" class="step slide" data-x="5500" data-y="0" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
+        <h1>cache-concious design</h1>
+        <img class="center" src="git-local-remotes.png"><img>
+        </div>
     
-    <div id="design1" class="step" data-x="500" data-y="2000" data-rotate="0" data-scale="6">
-    </div>
-    
-    <div id="distributed" class="step slide" data-x="0" data-y="4000" data-scale="1">
+    <div id="distributed" class="step slide" data-x="6000" data-y="0" data-z="-2000" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
         <h1>all repository are created equal !!!</h1>
         <img class="center" src="alleq.png" />
     </div>
 
-    <div id="svn" class="step slide" data-x="0" data-y="4800" data-scale="1">
+    <div id="svn" class="step slide" data-x="6500" data-y="0" data-z="-4000" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
         <h1>unless one is promoted to be the <b>origin</b> of all things (just like svn)</h1>
         <img class="center" src="workflow-a.png" />
     </div>
 
-    <div id="integration" class="step slide" data-x="0" data-y="5600" data-scale="1">
+    <div id="github" class="step slide" data-x="7000" data-y="0" data-z="-6000" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
         <h1>github: you may fork, but you must request to be pulled</h1>
         <img class="center" src="workflow-b.png" />
     </div>
 
-    <div id="dictator" class="step slide" data-x="0" data-y="6400" data-scale="1">
+    <div id="dictator" class="step slide" data-x="7500" data-y="0" data-z="-8000" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
         <h1>dictator: be careful of who you trust when merging!</h1>
         <img class="center" src="workflow-c.png" />
     </div>
     
+    <div id="integrity" class="step slide" data-x="8000" data-y="0" data-z="-10000" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
+        <q>authentication of history</q>
+        <ul>
+            <li>each commit hash identify the snapshot content and the full associated history (more details comming)</li>
+            <li>each tag is an immutable pointer to a commit hashes</li>
+            <li>tags can be cryptographically signed with GPG</li>
+        </ul>
+    </div>
+
+    <div id="engineering" class="step" data-x="3000" data-y="3200" data-rotate="0" data-scale="6">
+        <q>git engineering</q>
+        <ul>
+          <li>content-addressable object database</li>
+          <li>Five (5) object types: blob, tree, commit, tag & branches</li>
+        </ul>
+    </div>
+
+    <div id="objects" class="step slide vertical" data-x="6400" data-y="3200" data-scale="3">
+    	<img class="center" src="git-objects.png" />
+    </div>
+
+    <div id="commits" class="step slide" data-x="8400" data-y="2200" data-scale="1">
+    	<h1>commits are snapshots, not deltas</h1>
+    	<img class="center" src="git-blobs.png" />
+    </div>
+
+    <div id="singleparent" class="step slide" data-x="8400" data-y="3200" data-scale="1">
+    	<h1>each commit points to its parent (knows its own history)</h1>
+    	<img class="center" src="git-commits.png" />
+    </div>
+
+    <div id="merges" class="step slide" data-x="8400" data-y="4200" data-scale="1">
+    	<q>merge is a commit with <em>N</em> parents, retaining merge history</q>
+        <img class="center" src="merge-history.png" />
+    </div>
+    
+    <div id="branches" class="step slide" data-x="8400" data-y="5200" data-scale="1">
+          <h1>tags & branches are simply pointers to commits</h1>
+    	<img class="center" src="git-branches.png" />
+    </div>
+
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="12">
+    </div>
     <!--
         
         This step here doesn't introduce anything new when it comes to data attributes, but you
@@ -203,7 +194,7 @@ sys	0m0.061s
         Only one current step has the `present` class.
         
     -->
-    <div id="ing" class="step" data-x="3500" data-y="-850" data-rotate="270" data-scale="6">
+    <!--div id="ing" class="step" data-x="3500" data-y="-850" data-rotate="270" data-scale="6">
         <p>by <b class="positioning">positioning</b>, <b class="rotating">rotating</b> and <b class="scaling">scaling</b> them on an infinite canvas</p>
     </div>
 
@@ -218,7 +209,7 @@ sys	0m0.061s
 
     <div id="one-more-thing" class="step" data-x="6000" data-y="4000" data-scale="2">
         <p>one more thing...</p>
-    </div>
+    </div-->
 
     <!--
         
@@ -232,10 +223,10 @@ sys	0m0.061s
         as `data-rotate` (these two are basically aliases).
         
     -->
-    <div id="its-in-3d" class="step" data-x="6200" data-y="4300" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
+    <!--div id="its-in-3d" class="step" data-x="6200" data-y="4300" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
         <p><span class="have">have</span> <span class="you">you</span> <span class="noticed">noticed</span> <span class="its">it's</span> <span class="in">in</span> <b>3D<sup>*</sup></b>?</p>
         <span class="footnote">* beat that, prezi ;)</span>
-    </div>
+    </div-->
 
     <!--
         
@@ -252,8 +243,6 @@ sys	0m0.061s
         CSS transfrom docs: https://developer.mozilla.org/en/CSS/transform
         
     -->
-    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
-    </div>
 
 </div>
 
