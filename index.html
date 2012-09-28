@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1024" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>git, the stupid content tracker</title>
+    <title>@chickamade $ whatis git</title>
     
-    <meta name="description" content="git, the stupid content tracker" />
+    <meta name="description" content="@chickamade $ whatis git" />
     <meta name="author" content="@chickamade" />
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
@@ -66,7 +66,7 @@
         
     -->
     <div id="cover" class="step slide" data-x="-1000" data-y="-1500">
-        <q>aht $ whatis git</q>
+        <q>@chickamade $ whatis git</q>
         <p>the stupid content tracker ...</p>
     </div>
 
@@ -106,6 +106,18 @@
         </ul>
     </div>
 
+    <!--
+        
+        And the last one shows full power and flexibility of impress.js.
+        
+        You can not only position element in 3D, but also rotate it around any axis.
+        So this one here will get rotated by -40 degrees (40 degrees anticlockwise) around X axis and
+        10 degrees (clockwise) around Y axis.
+        
+        You can of course rotate it around Z axis with `data-rotate-z` - it has exactly the same effect
+        as `data-rotate` (these two are basically aliases).
+        
+    -->
     <div id="perf" class="step slide" data-x="5500" data-y="0" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
         <h1>cache-concious design</h1>
         <img class="center" src="git-local-remotes.png"><img>
@@ -175,14 +187,14 @@
     <div id="getstarted" class="step slide" data-x="-2400" data-y="-500" data-rotate="45" data-scale="2">
         <h1>getting started</h1>
         <pre># git let you choose your display name
-$ git config --global user.name "Hò Văn Tèn"
-$ git config --global user.email hvt@skunkworks.vn
+$ git config --global user.name "Your Name"
+$ git config --global user.email you@yourdomain
 
 # to start new repo
 $ git init
 
 # to clone an existing one
-$ git clone https://github.com/django/django.git
+$ git clone https://github.com/git/git.git
 
 # for access control
 # you'll need to have a RSA/DSA key pair
@@ -208,7 +220,7 @@ $ git clone https://github.com/django/django.git
     </div>
 
     <div id="staging" class="step slide" data-x="-4800" data-y="3000" data-rotate="-20" data-scale="2">
-        <h1>partial commit with staging area (GUI recommended)</h1>
+        <h1>partial commit with staging area (GUI recommended, e.g. GitX)</h1>
         <p>one afternoon, you made changes to 15 files; now you want to commit it in 3 parts!</p>
         <pre>
 $ touch foo.py bar.py bazzz.py
@@ -245,17 +257,17 @@ $ git revert badcommit
         <pre># idonethis!
 $ git log --author=Hai-Anh --since="12 hours ago"
 
-# anyone changed this file?
-$ git log -- src/config/settings.py | sendmail jan.niederhumer@skunkworks.vn
-
 # list all commits since branch 3.24
-$ git log 3.24..master > release-notes.txt
+$ git log v3.24..master >> release-notes.txt
+
+# did anyone touch the config file?
+$ git log v3.24..master -- src/config/settings.py
 
 # show file diff against old version
 $ git diff v2.5.1:foobar.py HEAD:foobar.py
 
 # grepping through history
-$ git grep XXX 3.25
+$ git grep XXX v3.25
 </pre>
     </div>
 
@@ -290,14 +302,17 @@ $ git stash pop
     </div>
 
     <div id="next" class="step slide" data-x="1000" data-y="5000" data-rotate="0" data-scale="4">
-        <q>where next?</q>
+        <h1>where next?</h1>
         <ul>
-          <li>Read the <a href="http://git-scm.com/docs/gittutorial">official tutorial</a>($ man gittutorial).</li>
+          <li>Choose a GUI: <a href="http://git-scm.com/downloads/guis">Official GUI clients list</a>, my fav is <a href="http://gitx.laullon.com/">GitX</a> on OS X, if you use Eclipse then use <a href="http://www.eclipse.org/egit/">EGit</a>.</li>
+          <li>Read the <a href="http://git-scm.com/docs/gittutorial">official tutorial</a> ($ man gittutorial).</li>
           <li>Follow the <a href="http://gitimmersion.com/">git immersion</a>, a guided tour of git.</li>
           <li>Read <a href="http://www-cs-students.stanford.edu/~blynn/gitmagic/">git magic</a>, a more involved/advanced tour of git.</li>
           <li>Read the <a href="http://git-scm.com/book">Pro Git book</a>, it's quite short & sweet.</li>
           <li><a href="http://git-scm.com/docs">RTFM</a></li>
+          <li>Hangout on #git on <a href="irc://irc.freenode.net/git">irc.freenode.net</a>.</li>
         </ul>
+        <p class="caption" style="margin-top: 50px">brought to you by<a href="http://twitter.com/chickamade">@chickamade</a>, engineer at <a href="https://klamr.to/">klamr.to</a>.</p>
     </div>
 
     <div id="overview" class="step" data-x="1400" data-y="1600" data-scale="12">
@@ -340,18 +355,6 @@ $ git stash pop
         <p>one more thing...</p>
     </div-->
 
-    <!--
-        
-        And the last one shows full power and flexibility of impress.js.
-        
-        You can not only position element in 3D, but also rotate it around any axis.
-        So this one here will get rotated by -40 degrees (40 degrees anticlockwise) around X axis and
-        10 degrees (clockwise) around Y axis.
-        
-        You can of course rotate it around Z axis with `data-rotate-z` - it has exactly the same effect
-        as `data-rotate` (these two are basically aliases).
-        
-    -->
     <!--div id="its-in-3d" class="step" data-x="6200" data-y="4300" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
         <p><span class="have">have</span> <span class="you">you</span> <span class="noticed">noticed</span> <span class="its">it's</span> <span class="in">in</span> <b>3D<sup>*</sup></b>?</p>
         <span class="footnote">* beat that, prezi ;)</span>
@@ -372,7 +375,6 @@ $ git stash pop
         CSS transfrom docs: https://developer.mozilla.org/en/CSS/transform
         
     -->
-
 </div>
 
 <!--
@@ -408,21 +410,6 @@ if ("ontouchstart" in document.documentElement) {
 }
 </script>
 
-<!--
-    
-    Last, but not least.
-    
-    To make all described above really work, you need to include impress.js in the page.
-    I strongly encourage to minify it first.
-    
-    In here I just include full source of the script to make it more readable.
-    
-    You also need to call a `impress().init()` function to initialize impress.js presentation.
-    And you should do it in the end of your document. Not only because it's a good practice, but also
-    because it should be done when the whole document is ready.
-    Of course you can wrap it in any kind of "DOM ready" event, but I was too lazy to do so ;)
-    
--->
 <script src="js/impress.js"></script>
 <script>impress().init();</script>
 
@@ -453,49 +440,3 @@ if ("ontouchstart" in document.documentElement) {
 
 </body>
 </html>
-
-<!--
-    
-    Now you know more or less everything you need to build your first impress.js presentation, but before
-    you start...
-    
-    Oh, you've already cloned the code from GitHub?
-    
-    You have it open in text editor?
-    
-    Stop right there!
-    
-    That's not how you create awesome presentations. This is only a code. Implementation of the idea that
-    first needs to grow in your mind.
-    
-    So if you want to build great presentation take a pencil and piece of paper. And turn off the computer.
-    
-    Sketch, draw and write. Brainstorm your ideas on a paper. Try to build a mind-map of what you'd like
-    to present. It will get you closer and closer to the layout you'll build later with impress.js.
-    
-    Get back to the code only when you have your presentation ready on a paper. It doesn't make sense to do
-    it earlier, because you'll only waste your time fighting with positioning of useless points.
-    
-    If you think I'm crazy, please put your hands on a book called "Presentation Zen". It's all about 
-    creating awesome and engaging presentations.
-    
-    Think about it. 'Cause impress.js may not help you, if you have nothing interesting to say.
-    
--->
-
-<!--
-    
-    Are you still reading this?
-    
-    For real?
-    
-    I'm impressed! Feel free to let me know that you got that far (I'm @bartaz on Twitter), 'cause I'd like
-    to congratulate you personally :)
-    
-    But you don't have to do it now. Take my advice and take some time off. Make yourself a cup of coffee, tea,
-    or anything you like to drink. And raise a glass for me ;)
-    
-    Cheers!
-    
--->
-
