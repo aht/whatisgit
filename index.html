@@ -235,11 +235,14 @@ $ git reset
 
     <div id="cleanup" class="step slide" data-x="-4800" data-y="4500" data-rotate="-20" data-scale="2">
         <h1>cleaning up the mess</h1>
-        <pre># just unstage the file, don't overwrite working dir
+        <pre># just unstage the file, don't overwrite working copy
 $ git reset HEAD <file>...
 
-# overwrite working dir with latest revision of oldstuff.py
+# overwrite working copy with latest revision of oldstuff.py
 $ git checkout -- oldstuff.py
+
+# checkout subdir from old version, overwriting working copy
+git checkout v3.25.1 -- path/to/dir
 
 # i committed and pushed something is just broken :(,
 # this makes an extra commit that is
@@ -267,7 +270,7 @@ $ git grep XXX 3.25
         </pre>
     </div>
 
-    <div id="overview" class="step" data-x="2000" data-y="2000" data-scale="12">
+    <div id="overview" class="step" data-x="2000" data-y="2400" data-scale="12">
     </div>
     <!--
         
