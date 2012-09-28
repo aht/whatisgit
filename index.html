@@ -186,7 +186,7 @@ $ git clone https://github.com/django/django.git
 
 # for access control
 # you'll need to have a RSA/DSA key pair
-        </pre>
+</pre>
     </div>
 
     <div id="basicops" class="step slide" data-x="-2400" data-y="1500" data-rotate="0" data-scale="4">
@@ -198,21 +198,10 @@ $ git clone https://github.com/django/django.git
         <q>basic day to day work flow</q>
         <ul>
             <li>git checkout working-branch</li>
-            <li>git fetch and git merge with remote origin</li>
-            <li>edit some files!!!</li>
-            <li>git add thems
-            <li>git commit -m 'meaningful messages'</li>
-            <li>git push origin working-branch</li>
-        </ul>
-    </div>
-
-    <div id="basicflow" class="step slide" data-x="-4800" data-y="1500" data-rotate="0" data-scale="2">
-        <q>basic day to day work flow</q>
-        <ul>
-            <li>git checkout working-branch</li>
-            <li>git fetch and git merge with remote origin</li>
-            <li>edit some files!!!</li>
-            <li>git add thems
+            <li>git fetch && git merge origin master</li>
+            <li>vim work.py</li>
+            <li>git diff</li>
+            <li>git add work.py<li
             <li>git commit -m 'meaningful messages'</li>
             <li>git push origin working-branch</li>
         </ul>
@@ -230,15 +219,15 @@ $ git add -p
 
 # this reset the staging area, but leaving the working tree dirty
 $ git reset
-        </pre>
+</pre>
     </div>
 
     <div id="cleanup" class="step slide" data-x="-4800" data-y="4500" data-rotate="-20" data-scale="2">
         <h1>cleaning up the mess</h1>
         <pre># just unstage the file, don't overwrite working copy
-$ git reset HEAD <file>...
+$ git reset HEAD -- file.py
 
-# overwrite working copy with latest revision of oldstuff.py
+# checkout file from HEAD, overwriting working copy
 $ git checkout -- oldstuff.py
 
 # checkout subdir from old version, overwriting working copy
@@ -248,7 +237,7 @@ git checkout v3.25.1 -- path/to/dir
 # this makes an extra commit that is
 # the negatation the changes in badcommit.
 $ git revert badcommit
-        </pre>
+</pre>
     </div>
 
     <div id="hist" class="step slide" data-x="-4800" data-y="6000" data-rotate="-20" data-scale="2">
@@ -267,11 +256,53 @@ $ git diff v2.5.1:foobar.py HEAD:foobar.py
 
 # grepping through history
 $ git grep XXX 3.25
-        </pre>
+</pre>
+    </div>
+
+    <div id="80branches" class="step slide" data-x="-3000" data-y="5000" data-rotate="-90" data-scale="1">
+        <h1>too many branches???</h1>
+        <img class="center" src="wide-gitk.gif" />
+    </div>
+
+    <div id="rebase" class="step slide" data-x="-2200" data-y="5000" data-rotate="-90" data-scale="1">
+        <h1>use rebase for a linear history</h1>
+        <img class="center" src="rebase.png" />
+        <p class="caption">rebase rewrites history, use it for <b>local</b> changes only!</p>
+    </div>
+
+    <div id="jobdone" class="step slide" data-x="-1400" data-y="5000" data-rotate="-90" data-scale="1">
+        <h1>git is flexible, and get the job done</h1>
+        <pre># forgot to commit a new file, but local changes not pushed yet
+$ git add forgotten.py
+$ git commit --amend
+
+# i want that fix in my branch, now!
+$ git cherry-pick ${sha1}
+
+# i was working on feature X, made changes to 10 files
+# now i must leave it aside to work on a hotfix
+$ git stash save 'partial work on feature X'
+$ git checkout -b v2.30.1-hotfix v.2.30.1  # work on hotfix
+
+$ git checkout working-branch
+$ git stash pop
+</pre>
+    </div>
+
+    <div id="next" class="step slide" data-x="0" data-y="5000" data-rotate="0" data-scale="4">
+        <q>where next?</q>
+        <ul>
+          <li>Read the <a href="http://git-scm.com/docs/gittutorial">official tutorial</a>($ man gittutorial).</li>
+          <li>Follow the <a href="http://gitimmersion.com/">git immersion</a>, a guided tour of git.</li>
+          <li>Read <a href="http://www-cs-students.stanford.edu/~blynn/gitmagic/">git magic</a>, a more involved/advanced tour of git.</li>
+          <li>Read the <a href="http://git-scm.com/book">Pro Git book</a>, it's quite short & sweet.</li>
+          <li><a href="http://git-scm.com/docs">RTFM</a></li>
+        </ul>
     </div>
 
     <div id="overview" class="step" data-x="1600" data-y="1200" data-scale="12">
     </div>
+
     <!--
         
         This step here doesn't introduce anything new when it comes to data attributes, but you
