@@ -2,7 +2,7 @@
 ====
 
 a presentation about git, the stupid content tracker,
-for the novice and the semi-experience git user.
+for the novice and the semi-experienced git user.
 
 topics: git design, internals, basic and some immediate usage.
 
